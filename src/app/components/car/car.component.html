@@ -1,0 +1,26 @@
+<h4>Araç Listesi</h4>
+<br>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Marka Id</th>
+      <th>Renk Id</th>
+      <th>Model(Yıl)</th>
+      <th>Ücret</th>
+      <th>Açıklama</th>
+      <th>Detay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let car of cars">
+      <td>{{car.id}}</td>
+      <td>{{car.brandId}}</td>
+      <td>{{car.colorId}}</td>
+      <td>{{car.modelYear}}</td>
+      <td>{{car.dailyPrice}} ₺</td>
+      <td>{{car.description}}</td>
+      <td><a class="btn btn-info" routerLink="/cars/car/{{car.id}}" (click)="setCurrentCar(car)">Araç Detayları</a></td>
+    </tr>
+  </tbody>
+</table>

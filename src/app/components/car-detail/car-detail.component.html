@@ -1,0 +1,31 @@
+<h4>Araç Detayları</h4>
+<br>
+<table class="table table-bordered">
+    <thead>
+      <tr>
+      <th>Id</th>
+      <th>Açıklama</th>
+      <th>Marka</th>
+      <th>Model(Yıl)</th>
+      <th>Renk</th>
+      <th>Ücret</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let carDetail of carDetails">
+        <td>{{carDetail.id}}</td>
+        <td>{{carDetail.carDescription}}</td>
+        <td>{{carDetail.brandName}}</td>
+        <td>{{carDetail.modelYear}}</td>
+        <td>{{carDetail.colorName}}</td>
+        <td>{{carDetail.dailyPrice}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div *ngFor="let carImage of carImages" class="col">
+      <div class="card h-100">
+        <img [src]="getImageSource(carImage)" class="card-img-top" alt="...">
+      </div>
+    </div>
