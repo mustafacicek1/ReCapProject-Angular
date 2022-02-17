@@ -49,30 +49,25 @@
         <div *ngIf="filterColorId" class="alert alert-success">
           {{filterColorId}} aradınız.
             </div>
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Marka Id</th>
-          <th>Renk Id</th>
-          <th>Model(Yıl)</th>
-          <th>Ücret</th>
-          <th>Açıklama</th>
-          <th>Detay</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let car of cars | filterByBrand:filterBrandId |filterByColor:filterColorId">
-          <td>{{car.id}}</td>
-          <td>{{car.brandId}}</td>
-          <td>{{car.colorId}}</td>
-          <td>{{car.modelYear}}</td>
-          <td>{{car.dailyPrice}} ₺</td>
-          <td>{{car.description}}</td>
-          <td><a class="btn btn-info" routerLink="/cars/car/{{car.id}}" (click)="setCurrentCar(car)">Araç Detayları</a></td>
-        </tr>
-      </tbody>
-    </table>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+              <div class="col"*ngFor="let car of cars | filterByBrand:filterBrandId |filterByColor:filterColorId" >
+                <div class="card h-100">
+                  <img src="https://localhost:44349/Uploads/Images/DefaultImage.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Araç Açıklaması</h5>
+                    <p class="card-text">{{car.description}}</p>
+                    <p class="card-text">Model: {{car.modelYear}}</p>
+                    <p class="card-text">Günlük Ücret: {{car.dailyPrice}} ₺</p>
+                  </div>
+                  <div class="card-footer">
+                  <div class="btn-group">
+                    <button class="btn btn-info" routerLink="/cars/car/{{car.id}}" (click)="setCurrentCar(car)">Detay</button>
+                    <button class="btn btn-warning" routerLink="/cars/update/{{car.id}}">Güncelle</button>
+                  </div>       
+                  </div>
+                </div>
+              </div>
+            </div>
   </div>
 </div>
 </div>

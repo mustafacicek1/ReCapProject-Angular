@@ -1,42 +1,38 @@
-<h4>Araç Detayları</h4>
-<br>
-<table class="table table-bordered">
-    <thead>
-      <tr>
-      <th>Id</th>
-      <th>Açıklama</th>
-      <th>Marka</th>
-      <th>Model(Yıl)</th>
-      <th>Renk</th>
-      <th>Ücret</th>
-      <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let carDetail of carDetails">
-        <td>{{carDetail.id}}</td>
-        <td>{{carDetail.carDescription}}</td>
-        <td>{{carDetail.brandName}}</td>
-        <td>{{carDetail.modelYear}}</td>
-        <td>{{carDetail.colorName}}</td>
-        <td>{{carDetail.dailyPrice}}</td>
-        <td><button class="btn btn-primary">Kirala</button></td>
-      </tr>
-    </tbody>
-  </table>
+
   <br>
-  <div id="carouselExampleControls" class="carousel slide w-75" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div *ngFor="let carImage of carImages;first as isFirst" [ngClass]="isFirst ? 'carousel-item active' : 'carousel-item' ">
-        <img [src]="getImageSource(carImage)" class="d-block w-100" alt="...">
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+  <div class="container">
+      <div class="card">
+        <div class="card-header">
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div *ngFor="let carImage of carImages;first as isFirst" [ngClass]="isFirst ? 'carousel-item active' : 'carousel-item' ">
+                <img [src]="getImageSource(carImage)" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+       
+        <div class="card-body">
+          <h5 class="card-title">Araç Detayları</h5>
+        </div>
+        <ul class="list-group list-group-flush" *ngFor="let carDetail of carDetails">
+          <li class="list-group-item">Marka: {{carDetail.brandName}}</li>
+          <li class="list-group-item">Model:  {{carDetail.modelYear}}</li>
+          <li class="list-group-item">Renk: {{carDetail.colorName}}</li>
+          <li class="list-group-item">Günlük Ücret: {{carDetail.dailyPrice}} ₺</li>
+          <li class="list-group-item">Açıklama: {{carDetail.carDescription}}</li>
+        </ul>
+        <div class="card-body">
+          <a  class="btn btn-success">Kirala</a>
+        </div>
   </div>
+ 
+ 
