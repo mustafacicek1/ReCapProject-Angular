@@ -52,12 +52,13 @@
             <div class="row row-cols-1 row-cols-md-3 g-4">
               <div class="col"*ngFor="let car of cars | filterByBrand:filterBrandId |filterByColor:filterColorId" >
                 <div class="card h-100">
-                  <img src="https://localhost:44349/Uploads/Images/DefaultImage.jpg" class="card-img-top" alt="...">
+                  <img [src]="getImageSource(car.id)" class="card-img-top" alt="...">
                   <div class="card-body">
                     <h5 class="card-title">Araç Açıklaması</h5>
                     <p class="card-text">{{car.description}}</p>
                     <p class="card-text">Model: {{car.modelYear}}</p>
                     <p class="card-text">Günlük Ücret: {{car.dailyPrice}} ₺</p>
+                    <p class="card-text">Gereken Findeks Puanı: {{car.findeks}}</p>
                   </div>
                   <div class="card-footer">
                   <div class="btn-group">

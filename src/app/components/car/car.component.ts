@@ -16,6 +16,7 @@ import { ColorService } from 'src/app/services/color.service';
 export class CarComponent implements OnInit {
 
   cars:Car[]=[];
+  carImages:CarImage[];
   currentCar:Car;
   brands:Brand[]=[];
   colors:Color[]=[];
@@ -39,6 +40,7 @@ export class CarComponent implements OnInit {
       });
       this.getBrands();
       this.getColors();
+      this.getCarImages();
     }
 
     filter() {
@@ -94,5 +96,22 @@ export class CarComponent implements OnInit {
   
   setCurrentCar(car:Car){
     this.currentCar=car;
+  }
+  
+  getCarImages(){
+    this.carService.getCarImages().subscribe(response=>{
+      this.carImages=response.data;
+    })
+  }
+
+  getImageSource(carId:number):string{
+      let carImage=this.carImages?.find(c=>c.carId===carId)
+      if(carImage){
+        let url:string="https://localhost:44349/"+carImage.imagePath;
+        return url;
+      }else{
+        let defaultImageUrl="https://localhost:44349/Uploads/Images/DefaultImage.jpg"
+        return defaultImageUrl;
+      }
   }
 }
