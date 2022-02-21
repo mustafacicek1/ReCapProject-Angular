@@ -11,7 +11,7 @@ import { SingleResponseModel } from '../models/singleResponseModel';
 })
 export class BrandService {
 
-  apiUrl="https://localhost:44349/api/";
+  apiUrl="https://localhost:44376/api/";
   constructor(private httpClient:HttpClient) { }
 
   getBrandList():Observable<ListResponseModel<Brand>>{

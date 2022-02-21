@@ -10,6 +10,7 @@ import { ColorAddComponent } from './components/color-add/color-add.component';
 import { ColorUpdateComponent } from './components/color-update/color-update.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { UserUpdateComponent } from './components/user-update/user-update.component';
 
 const routes: Routes = [
   {path:"",pathMatch:"full",component:CarComponent},
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path:"colors/update/:colorId",component:ColorUpdateComponent},
   {path:"cars/update/:carId",component:CarUpdateComponent},
   {path:"login",component:LoginComponent},
-  {path:"register",component:RegisterComponent}
+  {path:"register",component:RegisterComponent},
+  {path:"user/update",component:UserUpdateComponent}
 ];
 
 @NgModule({

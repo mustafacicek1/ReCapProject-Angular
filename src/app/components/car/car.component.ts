@@ -107,10 +107,10 @@ export class CarComponent implements OnInit {
   getImageSource(carId:number):string{
       let carImage=this.carImages?.find(c=>c.carId===carId)
       if(carImage){
-        let url:string="https://localhost:44349/"+carImage.imagePath;
+        let url:string="https://localhost:44376/"+carImage.imagePath;
         return url;
       }else{
-        let defaultImageUrl="https://localhost:44349/Uploads/Images/DefaultImage.jpg"
+        let defaultImageUrl="https://localhost:44376/Uploads/Images/DefaultImage.jpg"
         return defaultImageUrl;
       }
   }

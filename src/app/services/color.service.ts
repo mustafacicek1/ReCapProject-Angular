@@ -11,7 +11,7 @@ import { SingleResponseModel } from '../models/singleResponseModel';
 })
 export class ColorService {
 
-  apiUrl="https://localhost:44349/api/";
+  apiUrl="https://localhost:44376/api/";
   constructor(private httpClient:HttpClient) { }
 
   getColorList():Observable<ListResponseModel<Color>>{

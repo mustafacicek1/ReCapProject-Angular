@@ -11,7 +11,7 @@ import { ResponseModel } from '../models/responseModel';
 })
 export class RentalService {
 
-  apiUrl="https://localhost:44349/api/";
+  apiUrl="https://localhost:44376/api/";
   constructor(private httpClient:HttpClient) { }
   
   getRentalDetailList():Observable<ListResponseModel<RentalDetail>>{

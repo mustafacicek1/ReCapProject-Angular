@@ -37,6 +37,8 @@ export class LoginComponent implements OnInit {
         this.localStorageService.add("token",response.data.token)
         this.userService.getByMail(loginModel.email).subscribe(response=>{
           this.localStorageService.add("userName",response.data.firstName+" "+response.data.lastName)
+          this.localStorageService.add("email",response.data.email)
+          window.location.reload()
         })
 
       },responseError=>{

@@ -37,7 +37,7 @@ export class CarDetailComponent implements OnInit {
   }
 
   getImageSource(carImage:CarImage):string{
-    let url:string="https://localhost:44349/"+ carImage.imagePath;
+    let url:string="https://localhost:44376/"+ carImage.imagePath;
     return url
   }
 
