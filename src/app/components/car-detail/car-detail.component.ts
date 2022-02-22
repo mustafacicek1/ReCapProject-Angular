@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CarDetail } from 'src/app/models/carDetail';
 import { CarImage } from 'src/app/models/carImage';
+import { CarImageService } from 'src/app/services/car-image.service';
 import { CarService } from 'src/app/services/car.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class CarDetailComponent implements OnInit {
 
   carDetails:CarDetail[];
   carImages:CarImage[];
-  constructor(private carService:CarService,private activatedRoute:ActivatedRoute) { }
+  constructor(private carService:CarService,private activatedRoute:ActivatedRoute,private carImageService:CarImageService) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params=>{
@@ -31,7 +32,7 @@ export class CarDetailComponent implements OnInit {
   }
 
   getCarImageById(carId:number){
-    this.carService.getCarImageById(carId).subscribe(response=>{
+    this.carImageService.getCarImageById(carId).subscribe(response=>{
       this.carImages=response.data;
     })
   }

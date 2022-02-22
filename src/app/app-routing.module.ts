@@ -4,6 +4,7 @@ import { BrandAddComponent } from './components/brand-add/brand-add.component';
 import { BrandUpdateComponent } from './components/brand-update/brand-update.component';
 import { CarAddComponent } from './components/car-add/car-add.component';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
+import { CarImageComponent } from './components/car-image/car-image.component';
 import { CarUpdateComponent } from './components/car-update/car-update.component';
 import { CarComponent } from './components/car/car.component';
 import { ColorAddComponent } from './components/color-add/color-add.component';
@@ -26,7 +27,8 @@ const routes: Routes = [
   {path:"cars/update/:carId",component:CarUpdateComponent},
   {path:"login",component:LoginComponent},
   {path:"register",component:RegisterComponent},
-  {path:"user/update",component:UserUpdateComponent}
+  {path:"user/update",component:UserUpdateComponent},
+  {path:"carimage/edit",component:CarImageComponent}
 ];
 
 @NgModule({

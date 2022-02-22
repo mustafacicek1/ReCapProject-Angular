@@ -5,6 +5,7 @@ import { Car } from 'src/app/models/car';
 import { CarImage } from 'src/app/models/carImage';
 import { Color } from 'src/app/models/color';
 import { BrandService } from 'src/app/services/brand.service';
+import { CarImageService } from 'src/app/services/car-image.service';
 import { CarService } from 'src/app/services/car.service';
 import { ColorService } from 'src/app/services/color.service';
 
@@ -25,7 +26,7 @@ export class CarComponent implements OnInit {
   filterBrandId:number;
   filterColorId:number;
   constructor(private carService:CarService,private activatedRoute:ActivatedRoute,
-    private brandService:BrandService,
+    private brandService:BrandService,private carImageService:CarImageService,
     private colorService:ColorService) { }
 
     ngOnInit(): void {
@@ -99,7 +100,7 @@ export class CarComponent implements OnInit {
   }
   
   getCarImages(){
-    this.carService.getCarImages().subscribe(response=>{
+    this.carImageService.getCarImages().subscribe(response=>{
       this.carImages=response.data;
     })
   }

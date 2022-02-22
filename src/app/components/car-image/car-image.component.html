@@ -1,0 +1,47 @@
+<br>
+<div class="card">
+    <div class="card-header shadow">
+      <h5 class="card-title">Yeni Resim Ekle</h5>
+      <div class="input-group">
+        <input
+          (change)="selectFile($event)"
+          type="file"
+          class="form-control"
+        />
+        <input type="number" [(ngModel)]="carId" placeholder="Araç Id sini giriniz" min="1" class="form-control">
+        <button
+          (click)="onUpload()"
+          [disabled]="!selectedFile"
+          class="btn btn-success"
+        >
+          Yükle
+        </button>
+      </div>
+    </div>
+</div>
+<br>
+<div class="card">
+<div class="card-header">
+  <h5 class="card-title">Araç Resimleri</h5>
+  <div class="form-group">
+    <input class="form-control" type="number" [(ngModel)]="carIdForImages" placeholder="Araç Id giriniz">
+    <br>
+    <button class="btn btn-warning" (click)="getCarImagesById(carIdForImages)">Resimleri Getir</button>
+    </div>
+</div>
+</div>
+<br>
+<div *ngIf="carImages" class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="col" *ngFor="let carImage of carImages" style="max-width: 20rem;">
+    <div class="card">
+      <img [src]="getImageSource(carImage)" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-text">Araç Id: {{carImage.carId}}</p>
+        <p class="card-text">Dosya Yolu: {{carImage.imagePath}}</p>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-danger" (click)="delete(carImage)">Resmi Sil</button>
+      </div>
+    </div>
+  </div>
+</div>
