@@ -13,7 +13,7 @@ export class PaymentService {
   constructor(private httpClient:HttpClient) { }
 
   pay(creditCard:CreditCard):Observable<ResponseModel>{
-    let newPath=this.apiUrl+"/payments/pay";
+    let newPath=this.apiUrl+"payments/pay";
     return this.httpClient.post<ResponseModel>(newPath,creditCard);
   }
 }

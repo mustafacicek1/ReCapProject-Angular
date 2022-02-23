@@ -8,7 +8,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrandComponent } from './components/brand/brand.component';
 import { CarComponent } from './components/car/car.component';
-import { CustomerComponent } from './components/customer/customer.component';
 import { RentalComponent } from './components/rental/rental.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { ColorComponent } from './components/color/color.component';
@@ -29,6 +28,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { UserUpdateComponent } from './components/user-update/user-update.component';
 import { UserComponent } from './components/user/user.component';
 import { CarImageComponent } from './components/car-image/car-image.component';
+import { PaymentComponent } from './components/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,6 @@ import { CarImageComponent } from './components/car-image/car-image.component';
     CarComponent,
     BrandComponent,
     RentalComponent,
-    CustomerComponent,
     NaviComponent,
     ColorComponent,
     CarDetailComponent,
@@ -53,6 +52,7 @@ import { CarImageComponent } from './components/car-image/car-image.component';
     UserUpdateComponent,
     UserComponent,
     CarImageComponent,
+    PaymentComponent,
   ],
   imports: [
     BrowserModule,

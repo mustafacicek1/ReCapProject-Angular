@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CarDetail } from 'src/app/models/carDetail';
 import { CarImage } from 'src/app/models/carImage';
 import { CarImageService } from 'src/app/services/car-image.service';
@@ -14,7 +14,8 @@ export class CarDetailComponent implements OnInit {
 
   carDetails:CarDetail[];
   carImages:CarImage[];
-  constructor(private carService:CarService,private activatedRoute:ActivatedRoute,private carImageService:CarImageService) { }
+  constructor(private carService:CarService,private activatedRoute:ActivatedRoute,private carImageService:CarImageService,
+    private router:Router) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params=>{
@@ -40,6 +41,10 @@ export class CarDetailComponent implements OnInit {
   getImageSource(carImage:CarImage):string{
     let url:string="https://localhost:44376/"+ carImage.imagePath;
     return url
+  }
+
+  goToPayment(){
+    this.router.navigate(["payment/pay/"+this.carDetails[0].id])
   }
 
 }

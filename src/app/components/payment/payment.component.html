@@ -1,0 +1,45 @@
+<div class="container">
+    <form [formGroup]="creditCardForm">
+      <div class="row gy-3">
+        <div class="col-sm-6">
+            <label for="customerId" class="form-label">Müşteri Id</label>
+            <input type="number" formControlName="customerId" class="form-control" id="customerId">
+          </div>
+        <div class="col-md-6">
+          <label for="nameOnTheCard" class="form-label">Kart Üzerindeki İsim</label>
+          <input type="text" formControlName="nameOnTheCard" class="form-control" id="nameOnTheCard">
+        </div>
+        <div class="col-md-6">
+          <label for="cardNumber" class="form-label">Kart Numarası</label>
+          <input type="text" formControlName="cardNumber" class="form-control" id="cardNumber" >
+
+        </div>
+      
+        <div class="col-md-3">
+          <label for="expirationDate" class="form-label">Kart Geçerlilik Tarihi</label>
+          <input type="text" formControlName="expirationDate" class="form-control" id="expirationDate" >
+        </div>
+      
+        <div class="col-md-3">
+          <label for="cvv" class="form-label">CVV</label>
+          <input type="number" formControlName="cvv" class="form-control" id="cvv">
+        </div>
+      </div>
+        </form>
+        <br>
+            <div class="col-sm-6">
+                <label for="returnDate" class="form-label">Araç Dönüş Tarihi</label>
+                <input type="date" [(ngModel)]="returnDate" class="form-control" id="returnDate">
+            </div> 
+          <div class="my-3">
+            <div class="form-check">
+              <input id="saveCard" (change)="toggleChecked()" [checked]="isChecked$ | async" name="saveCard" type="checkbox" class="form-check-input" >
+              <label class="form-check-label" for="saveCard">Kartı Kaydet</label>
+            </div>
+          </div>
+          
+          <hr class="my-4">
+          
+          <button class="w-100 btn btn-primary btn-lg" (click)="pay()" type="submit">Ödemeyi Tamamla</button>
+       
+</div>
